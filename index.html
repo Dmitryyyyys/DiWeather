@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=7446161c-928d-4ba5-9a2a-a4eedc8e376a" type="text/javascript"></script>
+    
+</script>
     <link rel="stylesheet" href="style.css">
     <title>DIweather</title>
     
 </head>
 <body>
+<div id="map">
+    
+</div>
     <div class="card">
 <div class="search">
     <input type="text" placeholder="city name" spellcheck="false">
@@ -25,9 +30,9 @@
     <p class="feel"></p>
     <h2 class="city">New York</h2>
     <div class="details">
-        <div class="col">
+        <div class="col1">
             <img src="images/humidity.png">
-            <div>
+            <div class="winds">
                 <p class="humidity">50%</p>
                 <p>Humidity</p>
         </div>
@@ -41,6 +46,4 @@
 </div>
     </div>
     </div>
-    <script src="/DiWeather/project.js"></script>
-</body>
-</html>
+    <script src="project.js"></script>
