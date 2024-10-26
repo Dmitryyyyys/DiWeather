@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*
+{
+margin:0;
+padding:0;
+box-sizing: border-box;
+font-family:'Poppins',sans-serif;
+}
+
+section
+{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height:100vh;
+background:  linear-gradient(120deg, #6815dc,#0b2d34); ;
+
+}
+.login-box{
+    position:relative;
+    width:475px;
+    height:455px;
+    background:transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:25px;
+    backdrop-filter: blur(15px);
+}
+h2{
+font-size:2em;
+text-align:center;
+color:aliceblue;
+}
+.input-box{
+position: relative;
+width:310px;
+margin:30px 0;
+border-bottom:2px solid #fff;
+}
+.input-box label{
+    position:absolute;
+    top:50%;
+    left:7.5px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 1em;
+    color: #fff;
+    transition: .22s;
+}
+.input-box input:focus ~ label
+{
+    top:-5px;
+}
+
+ .input-box input:valid ~ label
+{
+    top:-5px;
+} 
+
+
+.input-box input{
+    width:100%;
+    height:50px;
+    background: transparent;
+    border:none;
+    outline: none;
+    font-size: 1em;
+    color:#fff;
+    padding:0 30px 0 5px;
+}
+.input-box .icon
+{
+position:absolute;
+right:8px;
+color:#fff;
+font-size:1.2em;
+line-height:57px;    
+}
+.remember-forgot{
+    margin: -15.7px 0 17px;
+    font-size: .9em;
+    color:#fff;
+    display: flex;
+    justify-content:space-between;
+}
+.remember-forgot label input{
+    margin-right: 4px;
+}
+.remember-forgot a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover{
+    text-decoration: underline;
+    font-size: 1rem;
+    transition: font-size 0.5s ease;
+}
+button{
+    width:100%;
+    height:40px;
+    color:black;
+    border-radius: 20px;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    font-weight: 500;
+    font-size:1em;
+}
+
+.register-link
+{
+font-size: .9em;
+color: #fff;
+margin:25px 0 10px;
+text-align:center;
+}
+.register-link p a
+{
+color:#fff;
+text-decoration:none;
+font-weight:600;
+}
+.register-link p a:hover
+{
+    text-decoration: underline;
+    font-size: 1rem;
+    transition: font-size 0.5s ease;
+}
