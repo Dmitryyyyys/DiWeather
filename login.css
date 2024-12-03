@@ -59,6 +59,10 @@ border-bottom:2px solid #fff;
 {
     top:-5px;
 } 
+.input-box input ~ label
+{
+    top:-5px;
+}
 
 
 .input-box input{
@@ -129,4 +133,36 @@ font-weight:600;
     text-decoration: underline;
     font-size: 1rem;
     transition: font-size 0.5s ease;
+}
+
+.popup{
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(65%,-20%);
+    background-color:white ;
+    border:2px solid #ccc;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+    padding:20px;
+    z-index:1000;
+    text-align:center;
+    width:300px;
+}
+
+.popup button{
+    margin-top:10px;
+    padding:10px 20px;
+    background-color:#007bff;
+    color:white;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+}
+.popup button:hover{
+    background-color:#0056b3;
+}
+
+#icon1{
+    display:none;
 }
