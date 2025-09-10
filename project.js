@@ -1,12 +1,19 @@
 
-        const apiKey = "54190ab8a731b3c51f5e34b632f76a9e";
+       const apiKey = "54190ab8a731b3c51f5e34b632f76a9e";
         const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
         const searchBox = document.querySelector(".search input");
         const searchBtn = document.querySelector(".search button");
        const weatherIcon = document.querySelector(".weather-icon");
-        async function checkWeather(city){
+        
+       var map = L.map("map").setView([51.505,-0.09],20)
+       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
+attribution:
+'&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+}).addTo(map);
+       var marker;
+       async function checkWeather(city){
             const response = await fetch(apiUrl + city +`&appid=${apiKey}`);
-            
+            console.log(response);
             
             if(response.status == 404){
                 document.querySelector(".error").style.display = "block";
@@ -34,7 +41,23 @@ const weatherIcons = {
 const weatherType = data.weather[0].main;
 weatherIcon.src = weatherIcons[weatherType];
     
+const lat = data.coord.lat;
+const lon = data.coord.lon;
+map.flyTo([lat,lon], 10, {duration: 12});
 
+if (marker){
+    map.removeLayer(marker);
+}
+marker = L.marker([lat,lon],{
+    riseOnHover: true,
+    zIndexOffset:1000
+})
+.addTo(map)
+.bindPopup(
+    `<b>${data.name}</b><br>Температура: ${Math.round(
+        data.main.temp
+    )}°C`,{offset:[0,-50]}
+).openPopup();
 //variety of icons 
     // if(data.weather[0].main == "Clouds")
 // {
